@@ -5,5 +5,6 @@
 </style>
 
 <div>
-  <app-todo-item *ngFor="let item of itemsArray" [todoObject]="item"></app-todo-item>
+  <app-add-todo></app-add-todo>
+  <app-todo-item *ngFor="let item of itemsArray" [todoObject]="item" (deleteTodoItem)="deleteTodoFromList($event)"></app-todo-item>
 </div>

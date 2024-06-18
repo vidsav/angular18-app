@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {TodoItem} from "../todo-item";
 
 @Component({
@@ -10,5 +10,10 @@ import {TodoItem} from "../todo-item";
 })
 export class TodoItemComponent {
   @Input() todoObject!: TodoItem;
+  @Output() deleteTodoItem: EventEmitter<any> = new EventEmitter();
+
+  deleteTodoItemHandler = () => {
+    this.deleteTodoItem.emit(this.todoObject);
+  }
 
 }

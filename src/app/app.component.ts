@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import {TodoItemComponent} from "./todo-item/todo-item.component";
 import {TodoItem} from "./todo-item";
 import {NgForOf} from "@angular/common";
+import {filter} from "rxjs";
+import {AddTodoComponent} from "./add-todo/add-todo.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TodoItemComponent, NgForOf],
+  imports: [TodoItemComponent, NgForOf, AddTodoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -20,4 +22,8 @@ export class AppComponent {
     {id:5,text:'todo5'},
     {id:6,text:'todo6'},
   ]
+
+  deleteTodoFromList = (item:TodoItem) => {
+    this.itemsArray = this.itemsArray.filter(filterItem=>filterItem.id !== item.id);
+  }
 }
