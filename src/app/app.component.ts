@@ -4,11 +4,12 @@ import {TodoItem} from "./todo-item";
 import {NgForOf} from "@angular/common";
 import {filter} from "rxjs";
 import {AddTodoComponent} from "./add-todo/add-todo.component";
+import {RandomColorDirective} from "./random-color.directive";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TodoItemComponent, NgForOf, AddTodoComponent],
+  imports: [TodoItemComponent, NgForOf, AddTodoComponent, RandomColorDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

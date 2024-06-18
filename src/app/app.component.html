@@ -1,10 +1,22 @@
 
 
 <style>
-
+  .main-wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  .todoList{
+    display: flex;
+    flex-direction: column;
+  }
+  app-todo-item{
+    margin: 20px 0;
+  }
 </style>
 
-<div>
+<div class="main-wrapper">
   <app-add-todo (addNewTodoItem)="addNewTodoItem($event)"></app-add-todo>
-  <app-todo-item *ngFor="let item of itemsArray" [todoObject]="item" (deleteTodoItem)="deleteTodoFromList($event)"></app-todo-item>
+  <div class="todoList">
+    <app-todo-item appRandomColor *ngFor="let item of itemsArray" [todoObject]="item" (deleteTodoItem)="deleteTodoFromList($event)"></app-todo-item>
+  </div>
 </div>

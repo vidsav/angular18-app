@@ -1,10 +1,13 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {TodoItem} from "../todo-item";
+import {UpperCasePipe} from "@angular/common";
 
 @Component({
   selector: 'app-todo-item',
   standalone: true,
-  imports: [],
+  imports: [
+    UpperCasePipe
+  ],
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.css'
 })

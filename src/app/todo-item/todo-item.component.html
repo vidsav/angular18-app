@@ -1,2 +1,12 @@
-<p>{{todoObject.text}}</p>
-<button (click)="deleteTodoItemHandler()">Delete</button>
+<style>
+  .todo-item-wrapper{
+    display: flex;
+    p{
+      margin-right: 20px;
+    }
+  }
+</style>
+<div class="todo-item-wrapper">
+  <p>{{todoObject.text | uppercase}}</p>
+  <button (click)="deleteTodoItemHandler()">Delete</button>
+</div>
