@@ -15,15 +15,19 @@ import {AddTodoComponent} from "./add-todo/add-todo.component";
 export class AppComponent {
   title = 'todo-app';
   itemsArray: TodoItem[] = [
-    {id:1,text:'todo1'},
-    {id:2,text:'todo2'},
-    {id:3,text:'todo3'},
-    {id:4,text:'todo4'},
-    {id:5,text:'todo5'},
-    {id:6,text:'todo6'},
+    {id:'1',text:'todo1'},
+    {id:'2',text:'todo2'},
+    {id:'3',text:'todo3'},
+    {id:'4',text:'todo4'},
+    {id:'5',text:'todo5'},
+    {id:'6',text:'todo6'},
   ]
 
   deleteTodoFromList = (item:TodoItem) => {
     this.itemsArray = this.itemsArray.filter(filterItem=>filterItem.id !== item.id);
+  }
+
+  addNewTodoItem = (item:TodoItem) => {
+    this.itemsArray.unshift(item);
   }
 }
