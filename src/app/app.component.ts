@@ -16,18 +16,7 @@ import {TodoItemsService} from "./todo-items.service";
 })
 export class AppComponent {
   todoItemsService:TodoItemsService = inject(TodoItemsService);
-  // constructor() {
-  // }
   itemsArray = this.todoItemsService.getTodoItems();
-  // itemsArray: TodoItem[] = [
-  //   {id:'1',text:'todo1'},
-  //   {id:'2',text:'todo2'},
-  //   {id:'3',text:'todo3'},
-  //   {id:'4',text:'todo4'},
-  //   {id:'5',text:'todo5'},
-  //   {id:'6',text:'todo6'},
-  // ]
-
   todosListHandler = () => {
     this.todoItemsService.setTodoItems(this.itemsArray);
     this.itemsArray = this.todoItemsService.getTodoItems();
@@ -40,6 +29,11 @@ export class AppComponent {
 
   addNewTodoItem = (item:TodoItem) => {
     this.itemsArray.unshift(item);
+    this.todosListHandler();
+  }
+
+  toggleIsDone = (item: TodoItem) => {
+    item.isDone = !item.isDone;
     this.todosListHandler();
   }
 }

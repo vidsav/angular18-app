@@ -15,6 +15,6 @@
 <div class="main-wrapper">
   <app-add-todo (addNewTodoItem)="addNewTodoItem($event)"></app-add-todo>
   <div class="todoList">
-    <app-todo-item appRandomColor *ngFor="let item of itemsArray" [todoObject]="item" (deleteTodoItem)="deleteTodoFromList($event)"></app-todo-item>
+    <app-todo-item (toggleIsDone)="toggleIsDone($event)" appRandomColor *ngFor="let item of itemsArray" [todoObject]="item" (deleteTodoItem)="deleteTodoFromList($event)"></app-todo-item>
   </div>
 </div>

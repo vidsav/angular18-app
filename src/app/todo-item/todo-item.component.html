@@ -3,10 +3,13 @@
     display: flex;
     p{
       margin-right: 20px;
+      &.crossed{
+        text-decoration-line: line-through;
+      }
     }
   }
 </style>
 <div class="todo-item-wrapper">
-  <p>{{todoObject.text | uppercase}}</p>
+  <p [ngClass]="todoObject.isDone ? 'crossed' : ''" (click)="toggleIsDone.emit(todoObject);">{{todoObject.text | uppercase}}</p>
   <button (click)="deleteTodoItemHandler()">Delete</button>
 </div>

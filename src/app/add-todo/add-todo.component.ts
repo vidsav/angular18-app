@@ -17,7 +17,8 @@ export class AddTodoComponent {
   addNewTodo = () => {
     const newTodoItem: TodoItem = {
       id: crypto.randomUUID(),
-      text: this.addText
+      text: this.addText,
+      isDone: false
     }
     this.addNewTodoItem.emit(newTodoItem);
     this.addText = '';
